@@ -5,8 +5,7 @@ exports.viewSignup = function(req, res) {
 };
 
 exports.postSignup = function(req, res) {
-    // console.log(req)
-    // Auth.postSignup(req.body.user)
-    console.log(req.body)
+    console.log('req body: ', req.body)
+    Auth.postSignup(req.body)
     res.render('signup');
 };
