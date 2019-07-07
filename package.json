@@ -1,18 +1,28 @@
 {
-  "name": "simple-node-website",
+  "name": "cmmwebsite-pwa",
   "version": "0.1.0",
-  "description": "A simple website built with Node, Express and Pug",
-  "main": "server.js",
+  "description": "Front end for commerce website.",
+  "main": "app.js",
   "scripts": {
-    "start": ""
+    "start": "npx nodemon app.js",
+    "test": "./node_modules/.bin/mocha --recursive --reporter spec"
   },
-  "author": "Ayo Isaiah",
-  "license": "MIT",
+  "author": "Brian Furches",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv-safe": "^6.1.0",
     "express": "^4.16.3",
-    "pug": "^2.0.3"
+    "nyc": "^14.1.1",
+    "pug": "^2.0.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "request-promise-native": "^1.0.7"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^6.1.4",
+    "node-env-run": "^3.0.2",
     "nodemon": "^1.19.0"
   }
 }
