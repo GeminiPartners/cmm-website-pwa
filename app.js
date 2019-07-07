@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 
 //Load environment variables in dev
 require('dotenv-safe').config();
@@ -8,10 +9,13 @@ require('dotenv-safe').config();
 //Use pug to generate views
 app.set('view engine', 'pug');
 
+var cookieParser = require('cookie-parser');
+
 // serve static files from the `public` folder
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(__dirname + '/public'));
+
+app.use(cookieParser('kittens'));
 
 var auth = require('./routes/auth');
 
@@ -31,6 +35,8 @@ app.get('/profile', (req, res) => {
         person,
     });
 });
+
+// app.use(express.static(__dirname + '/public'));
 
 //set the PORT for this server
 
